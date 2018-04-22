@@ -1,0 +1,38 @@
+From ee63da0d4b47c6decce7280213899567875786eb Mon Sep 17 00:00:00 2001
+From: Konstantin <master.nosferatu@gmail.com>
+Date: Mon, 25 Dec 2017 17:17:02 +0300
+Subject: net: Realtek 8309G switch driver
+
+Signed-off-by: Konstantin <master.nosferatu@gmail.com>
+---
+ drivers/net/phy/Kconfig  | 4 ++++
+ drivers/net/phy/Makefile | 1 +
+ 2 files changed, 5 insertions(+)
+
+diff --git a/drivers/net/phy/Kconfig b/drivers/net/phy/Kconfig
+index 49f5454f95e3..125f2a4903ad 100644
+--- a/drivers/net/phy/Kconfig
++++ b/drivers/net/phy/Kconfig
+@@ -252,6 +252,10 @@ config RTL8306_PHY
+ 	tristate "Driver for Realtek RTL8306S switches"
+ 	select SWCONFIG
+ 
++config RTL8309G_PHY
++	tristate "Driver for Realtek RTL8309G switches"
++	select SWCONFIG
++
+ config RTL8366_SMI
+ 	tristate "Driver for the RTL8366 SMI interface"
+ 	depends on GPIOLIB
+diff --git a/drivers/net/phy/Makefile b/drivers/net/phy/Makefile
+index cd411e0df531..56fdaac771c5 100644
+--- a/drivers/net/phy/Makefile
++++ b/drivers/net/phy/Makefile
+@@ -31,6 +31,7 @@ obj-$(CONFIG_MVSWITCH_PHY)	+= mvswitch.o
+ obj-$(CONFIG_MVSW61XX_PHY)	+= mvsw61xx.o
+ obj-$(CONFIG_PSB6970_PHY)	+= psb6970.o
+ obj-$(CONFIG_RTL8306_PHY)	+= rtl8306.o
++obj-$(CONFIG_RTL8309G_PHY)	+= rtl8309g.o
+ obj-$(CONFIG_RTL8366_SMI)	+= rtl8366_smi.o
+ obj-$(CONFIG_RTL8366S_PHY)	+= rtl8366s.o
+ obj-$(CONFIG_RTL8366RB_PHY)	+= rtl8366rb.o
